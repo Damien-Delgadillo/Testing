@@ -1,20 +1,9 @@
-/**
- * @author Damien Delgadillo
- * @date 5/7/21
- * Code for testing source control
- **/
+ let express = require('express')
+ let app = express();
 
-console.log("Hello World");
-let factorial = (num) => {
-    if(num === 1){
-        return num;
-    }else{
-        return num * factorial(num-1);
-    }
-}
-console.log("Factorial of 5: " + factorial(5))
+ app.use(express.static('public'))
 
-/**
- * TEST
- * 
- * Another*/
+ let port = process.env.PORT || 3000;
+ app.listen(port, ()=>{
+     console.log(`Listening on port ${port}...`)
+ })
